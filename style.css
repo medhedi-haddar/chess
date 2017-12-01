@@ -1,0 +1,110 @@
+
+body{
+	padding:0;
+	margin: 0;
+	/*background-image: url(images/king-wallpaper.jpg);*/
+	/*background-size: 100% auto;*/
+}
+
+@keyframes clignote{
+
+	0%{
+		opacity:0.8;
+	}
+	35%{
+		opacity:1;
+	}
+	75%{
+		opacity: 0.3;
+	}
+	100%{
+		opacity: 0.6;
+	}
+}
+/*enimation */
+.clignote{
+  animation:clignote .7s infinite;
+}
+
+nav{
+	height: 30px;
+	width: 100%;
+	
+}
+ .container	{
+ 	/*background-color: grey;*/
+ 	display: -webkit-flex;
+ 	display: -moz-flex;
+ 	display: -ms-flex;
+ 	display: -o-flex;
+ 	display: flex;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+  justify-content: center;
+ }
+ .score{
+ 	text-align: center;
+ 	background-color: grey;
+ 	min-width:100px;
+ }
+ .title{
+  padding: 20px;
+  background: #f7f4f4;
+  border-bottom: 2px solid;
+  min-width: 100px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	align-items: center; }
+.blanc {
+	background: #FFFFFF;
+}
+
+#joueur-1 >.title p{
+  padding: 5px 15px;
+  background: green;
+  color: white;
+  border-radius: 50px;
+  margin:0;
+}
+
+#joueur-2 >.title p{
+  padding: 5px 15px;
+  background: red;
+  color: white;
+  border-radius: 50px;
+  margin:0;
+}
+
+.active{
+	background-color: red;
+}
+
+.noir {
+/*background : #000000;*/
+	background-color: transparent;
+}
+
+table {
+	border : 15px outset rgba(107, 77, 34, 0.5);
+	background-image: url(bg1.jpg);
+	background-size: auto 100%;
+	border-spacing: 0px;
+}
+table tr td{
+	width: 60px;
+	height: 60px;
+  border: 1px solid;
+  border-color: transparent;
+	text-align: center;
+}

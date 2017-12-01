@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+<style>
+body{
+	padding: 0;
+	margin: 0;
+}
+	table td{
+		background-color: white;
+		width: 127px;
+		height: 127px;
+		border:2px solid;
+	}
+	.active{
+	background-color: red;
+}
+
+.container{
+	margin:20px;
+	padding:50px;
+	background-color: grey
+}
+</style>
+<body>
+	<div class="container">
+		<table>
+
+				<tr>
+				<td id="td00"  ><img id="img1" src="img_cafe_picto_2.png" alt="" ></td>
+				<td id="td01" ></td>
+			</tr>
+			<tr>
+				<td id="td10" ></td>
+				<td id="td11" ><img id="img2" src="img_cafe_picto_3.png" alt=""></td>
+			</tr>
+		<!-- 	<tr>
+			<td id="td00" ondrop="drop(event,this)" ondragover="allowDrop(event)" ><img id="img1" src="img_cafe_picto_2.png" alt="" draggable="true"  ondragstart="drag(event,this)"></td>
+			<td id="td01" ondrop="drop(event,this)" ondragleave="desactive(event)" ondragenter="active(event)"  ondragover="allowDrop(event)"></td>
+		</tr>
+		<tr>
+			<td id="td10" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+			<td id="td11" ondrop="drop(event,this)" ondragover="allowDrop(event)"><img id="img2" src="img_cafe_picto_3.png" alt="" draggable="true" ondragstart="drag(event,this)"></td>
+		</tr> -->
+		</table>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+
+			<script>
+
+$( function() {
+    $( "img" ).draggable({ 
+    	revert: "invalid",
+    	start: function( event, ui ) {
+    		let source=document.getElementById(ui.helper.attr('id')).parentNode;
+    		console.log(source.id);
+    		console.log(getType(ui.helper));
+    	}
+  });
+
+    $( "td" ).droppable({
+      drop: function( event, ui ) {
+        // $( this )
+        //   .addClass( "ui-state-highlight" )
+        //   .find( "p" )
+        //     .html( "Dropped!" );
+        // console.log(ui.draggable.attr("id"));
+        let draggableItem=document.getElementById(ui.draggable.attr("id"))
+        draggableItem.style.top="";
+        draggableItem.style.left="";
+
+         ui.draggable.detach().appendTo($(this));
+      }
+    });
+
+    });
+function getType(a){
+	return a.attr('id');
+}
+
+// console.log($("table").position());
+
+// $(window).ready(function() {
+
+
+
+//     $('table').each(function() {
+
+//         $(this).find('tr').each(function(i) {
+//            $(this).find('td').each(function() {
+//                if(this.innerHTML.length>0){
+//                console.log(this.id+ ' have length = '+this.innerHTML.length);
+//         				}
+//         				else{
+//         					console.log(this.id+' this is empty');
+//        					}
+//             });
+//         });
+
+//     });
+// });
+
+	// $("img").mousedown(function(){
+	// 	let a=this;
+	// 	a.style.position="absolute";
+	// 	console.log(a.id+" Down");
+
+	// 		$(this).mousemove(function(e){
+	// 			a.style.top=(e.pageY-(a.height/2))+"px";
+	// 			a.style.left=(e.pageX-(a.width/2))+"px";
+	// 		});
+			
+	// 		$(a).mouseup(function(){
+	// 			console.log(a.id+" Up");
+	// 			this.style.position="relative";
+	// 		});
+
+	// });
+	// ---------------------------------------------------
+	// function active (ev) {
+		
+	// 	ev.target.classList.add('active');
+	// }
+	// function desactive (ev) {
+
+	// 	ev.target.classList.remove('active');
+	// }
+
+	// function allowDrop(ev) {
+ //    ev.preventDefault();
+	// 		// console.log("allowDrop");
+	// }
+
+	// function drag(ev,source) {
+	// 	console.log('limage {'+source.id+'} dropped from {'+source.parentNode.id+'}');
+ //  	ev.dataTransfer.setData("img", ev.target.id);
+
+  	
+	// }
+
+	// function drop(ev) {
+	// 		console.log('TO {'+ev.target.id+'}');
+
+ //    ev.preventDefault();
+ //    	console.log(document.getElementById(ev.target.id).innerHTML);
+    		
+ //    	    var data = ev.dataTransfer.getData("img");
+    	
+ //    	    	console.log(ev.target.parentNode);
+ //    				ev.target.appendChild(document.getElementById(data));
+ //    				console.log('droped');
+	// }
+
+</script>
+</body>
+</html>
