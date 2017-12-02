@@ -108,3 +108,21 @@ table tr td{
   border-color: transparent;
 	text-align: center;
 }
+#tresorWhite,#tresorBlack{
+	width: 150px;
+	    display: -webkit-flex;
+	    display: -moz-flex;
+	    display: -ms-flex;
+	    display: -o-flex;
+	    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+table tr td img:hover{
+	cursor: pointer;
+z-index: 10;
+filter: drop-shadow(3px 3px 1px rgba(0,0,0,0.3));
+}
